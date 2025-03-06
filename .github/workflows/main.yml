@@ -155,7 +155,7 @@ jobs:
 
       - name: Setup NuGet
         id: setup-nuget
-        uses: NuGet/setup-nuget@v2.0.0
+        uses: NuGet/setup-nuget@v2.0.1
 
       - name: Checkout repository
         id: checkout_repo
@@ -195,7 +195,7 @@ jobs:
       - if: matrix.runSonarCloudScan
         name: Cache SonarCloud packages
         id: cache_sonar_packages
-        uses: actions/cache@v4.1.0
+        uses: actions/cache@v4.2.0
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
@@ -204,7 +204,7 @@ jobs:
       - if: matrix.runSonarCloudScan
         name: Cache SonarCloud scanner
         id: cache_sonar_scanner
-        uses: actions/cache@v4.1.0
+        uses: actions/cache@v4.2.0
         with:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
